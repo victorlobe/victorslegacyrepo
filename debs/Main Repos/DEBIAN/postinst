@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Add Cydia sources (repos)
+echo "deb https://cydia.invoxiplaygames.uk/ ./" > /private/etc/apt/sources.list.d/invoxiplaygames.list
+echo "deb https://cydia.invoxiplaygames.uk/beta/ ./" > /private/etc/apt/sources.list.d/invoxiplaygamesBeta.list
+
+# Update the package list
+apt-get update

@@ -1,0 +1,7 @@
+Package: com.victorlobe.mainrepos
+Name: Main Repos
+Version: 1.0
+Architecture: iphoneos-arm
+Description: The most important Repos.
+Maintainer: Victor <your@email.com>
+Depends: cydia, mobilesubstrate
