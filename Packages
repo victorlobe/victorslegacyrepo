@@ -1,0 +1,24 @@
+Package: libactivator
+Version: 1.9.13~rc5
+Architecture: iphoneos-arm
+Maintainer: Ryan Petrich <rpetrich+activator@gmail.com>
+Installed-Size: 5044
+Depends: mobilesubstrate (>= 0.9.5101), preferenceloader (>= 2.2.2), com.a3tweaks.flipswitch (>= 1.0.16~rc2), com.rpetrich.rocketbootstrap (>= 1.0.9)
+Conflicts: com.booleanmagic.overboard (<= 1.1), com.ashman.lockinfo (<= 2.0.0-6), sbsettings (<= 3.0.6), com.fuyuchi.missionboardpro (<= 1.3), com.kindadev.nobetaalert, libhide (<< 2.4.1), com.fortysixandtwo.activ8rfix, net.tateu.actisearch, com.jakeashacks.activator, com.udevs.activatorhomebuttoncrashfix, eu.rio-doro.actithemefix
+Replaces: com.booleanmagic.overboard (<= 1.1), com.ashman.lockinfo (<= 2.0.0-6), com.fuyuchi.missionboardpro (<= 1.3), com.kindadev.nobetaalert, com.fortysixandtwo.activ8rfix, net.tateu.actisearch, com.jakeashacks.activator, com.udevs.activatorhomebuttoncrashfix, eu.rio-doro.actithemefix
+Filename: ./debs/libactivator_1.9.13~rc5.deb
+Size: 924640
+MD5sum: 7e83ab221425a8cab3db91b418a9eb9d
+SHA1: 9001b5d972d3d6ba8c9979c66f3e663c998d436b
+SHA256: 34935cca8f1f3e95bd5b550386227d5ebc52940d5021f4386c05198dc2576250
+Section: System
+Priority: optional
+Homepage: https://rpetri.ch/cydia/activator/beta/
+Description: Centralized gestures, button and shortcut management for iOS
+Author: Ryan Petrich <rpetrich+activator@gmail.com>
+Depiction: https://rpetri.ch/cydia/activator/beta/
+Dev: rpetrich
+Icon: file:///Applications/Activator.app/Icon-Small-modern@2x.png
+Name: Activator
+Sponsor: thebigboss.org <http://thebigboss.org>
+
