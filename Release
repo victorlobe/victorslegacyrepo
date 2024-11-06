@@ -6,3 +6,4 @@ Codename: ios
 Architectures: iphoneos-arm
 Components: main
 Description: My attempt for archiving old Tweaks
+Icon: ./CydiaIcon.png
