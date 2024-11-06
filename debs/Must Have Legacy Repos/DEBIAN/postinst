@@ -6,7 +6,7 @@ repos=(
     "https://repo.packix.com/"
     "https://repo.chariz.com/"
     "https://repo.dynastic.co/"
-    "https://cydia.skyglow.es"
+    "https://cydia.skyglow.es/"
 )
 
 # Add each repository to Cydia sources
