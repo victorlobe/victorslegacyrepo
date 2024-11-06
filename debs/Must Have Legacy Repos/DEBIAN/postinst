@@ -1,0 +1,20 @@
+#!/bin/bash
+# This script adds custom repositories to Cydia.
+
+# List of repositories to add
+repos=(
+    "https://repo.packix.com/"
+    "https://repo.chariz.com/"
+    "https://repo.dynastic.co/"
+    "https://cydia.skyglow.es"
+)
+
+# Add each repository to Cydia sources
+for repo in "${repos[@]}"; do
+    echo "deb $repo ./" > "/etc/apt/sources.list.d/$(echo $repo | sed 's|https://||;s|/|-|g').list"
+done
+
+# Update Cydia
+apt-get update
+
+exit 0

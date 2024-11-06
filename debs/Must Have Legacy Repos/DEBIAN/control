@@ -1,0 +1,9 @@
+Package: com.victorlobe.musthavelegacyrepos
+Name: Must Have Legacy Repos
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Automatically adds a list of important legacy repos to Cydia
+Maintainer: Victor Lobe <victor.lobe.dev@gmail.com>
+Author: Victor Lobe <victor.lobe.dev@gmail.com>
+Section: Utilities
+Priority: optional
