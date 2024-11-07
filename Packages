@@ -108,10 +108,10 @@ Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: Victor Lobe <victor.lobe.dev@gmail.com>
 Filename: ./debs/Must Have Legacy Repos.deb
-Size: 1656
-MD5sum: 5a885902306b47bbaeb64b4cb4410814
-SHA1: 888834b62022a24ee42357ddb945441686202d75
-SHA256: 7c178f8f10e601e6414d2da269db630647cafcf790c0e32a354c7143d4975111
+Size: 2080
+MD5sum: bab4a44154dfcf52ffbd52dc08df0eff
+SHA1: d28de46a0fc6635dc411e2ccbde10084a7cca7a8
+SHA256: d6b271519c7bc95fa397107f5a6ba26297f9e8db51d0cd795ab2b222151863c2
 Section: Utilities
 Priority: optional
 Description: Automatically adds a list of important legacy repos to Cydia
