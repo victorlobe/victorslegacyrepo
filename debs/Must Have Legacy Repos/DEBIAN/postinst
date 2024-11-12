@@ -5,16 +5,13 @@ REPO_LIST=(
     "https://poomsmart.github.io/repo"
 )
 
-# Cydia sources directory
-CYDIA_SOURCES_DIR="/var/mobile/Library/Cydia/"
-
 # Loop to add each repository URL to Cydia
 for REPO_URL in "${REPO_LIST[@]}"; do
-    echo "$REPO_URL" >> "$CYDIA_SOURCES_DIR/sources.list"
+    REPO_NAME=$(echo "$REPO_URL" | sed 's#http[s]\?://##' | tr -d '/')
+    echo "deb [trusted=yes] $REPO_URL ./" > /etc/apt/sources.list.d/$REPO_NAME.list
 done
 
 # Update Cydia sources
-su mobile -c "uicache --all"
-su mobile -c "killall -SIGTERM Cydia"
+apt-get update
 
 exit 0
