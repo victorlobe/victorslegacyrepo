@@ -3,19 +3,19 @@
 # List of repository URLs to add to Cydia
 REPO_LIST=(
     "http://apt.saurik.com/"
-    "https://apt.bingner.com/"
+    "http://apt.bingner.com/"
     "http://cydia.vn/"
     "http://apt.thebigboss.org/repofiles/cydia/"
     "http://bigboss.cydia.litten.ca/"
-    "https://cydia.skyglow.es/"
+    "http://cydia.skyglow.es/"
     "http://repo.packix.com/"
-    "https://rpetri.ch/repo/"
+    "http://rpetri.ch/repo/"
     "http://apt.cydiakk.com/"
-    "https://skitty.xyz/repo/"
+    "http://skitty.xyz/repo/"
     "http://repo.thireus.com/"
-    "https://cydia.invoxiplaygames.uk/"
+    "http://cydia.invoxiplaygames.uk/"
     "http://Yzu.moe/dev/"
-    "https://cydia.invoxiplaygames.uk/beta/"
+    "http://cydia.invoxiplaygames.uk/beta/"
     "http://opa334.github.io/"
     "http://repo.chariz.com/"
     "http://poomsmart.github.io/repo/"
@@ -31,7 +31,7 @@ REPO_LIST=(
 
 # Loop to add each repository URL to Cydia
 for REPO_URL in "${REPO_LIST[@]}"; do
-    REPO_NAME=$(echo "$REPO_URL" | sed 's/https\?:\/\///' | tr -d '/')
+    REPO_NAME=$(echo "$REPO_URL" | sed 's/http\?:\/\///' | tr -d '/')
     echo "deb $REPO_URL ./" > /etc/apt/sources.list.d/$REPO_NAME.list
 done
 
