@@ -2,20 +2,13 @@
 
 # List of repository URLs to add to Cydia
 REPO_LIST=(
-    "http://poomsmart.github.io/repo/"
+    "https://poomsmart.github.io/repo"
 )
-
-# Install apt7-https if not already installed
-if ! dpkg -s apt7-https >/dev/null 2>&1; then
-    echo "Installing apt7-https for HTTPS support in APT..."
-    apt-get update
-    apt-get install -y apt7-https
-fi
 
 # Loop to add each repository URL to Cydia
 for REPO_URL in "${REPO_LIST[@]}"; do
     REPO_NAME=$(echo "$REPO_URL" | sed 's#http[s]\?://##' | tr -d '/')
-    echo "deb $REPO_URL ./" > /etc/apt/sources.list.d/$REPO_NAME.list
+    echo "deb [trusted=yes] $REPO_URL ./" > /etc/apt/sources.list.d/$REPO_NAME.list
 done
 
 # Update Cydia sources
