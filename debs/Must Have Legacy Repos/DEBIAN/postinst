@@ -1,20 +1,24 @@
 #!/bin/bash
 
+# Ensure APT has HTTPS support
+if ! dpkg -s apt-transport-https >/dev/null 2>&1; then
+    echo "Installing apt-transport-https for HTTPS support in APT..."
+    apt-get update
+    apt-get install -y apt-transport-https
+fi
+
 # List of repository URLs to add to Cydia
 REPO_LIST=(
     "https://poomsmart.github.io/repo"
 )
 
-# Cydia sources directory
-CYDIA_SOURCES_DIR="/var/mobile/Library/Cydia/"
-
 # Loop to add each repository URL to Cydia
 for REPO_URL in "${REPO_LIST[@]}"; do
-    echo "$REPO_URL" >> "$CYDIA_SOURCES_DIR/sources.list"
+    REPO_NAME=$(echo "$REPO_URL" | sed 's#http[s]\?://##' | tr -d '/')
+    echo "deb [trusted=yes] $REPO_URL ./" > /etc/apt/sources.list.d/$REPO_NAME.list
 done
 
 # Update Cydia sources
-su mobile -c "uicache --all"
-su mobile -c "killall -SIGTERM Cydia"
+apt-get update
 
 exit 0
