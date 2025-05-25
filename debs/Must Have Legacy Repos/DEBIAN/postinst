@@ -8,10 +8,10 @@ REPO_LIST=(
 # Loop to add each repository URL to Cydia
 for REPO_URL in "${REPO_LIST[@]}"; do
     REPO_NAME=$(echo "$REPO_URL" | sed 's#http[s]\?://##' | tr -d '/')
-    echo "deb [trusted=yes] $REPO_URL ./" > /etc/apt/sources.list.d/$REPO_NAME.list
+    echo "deb $REPO_URL ./" > /etc/apt/sources.list.d/$REPO_NAME.list
 done
 
 # Update Cydia sources
-apt-get update
+apt update
 
 exit 0
