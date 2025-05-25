@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-# Liste der Repo-URLs
+# Liste der Repository-URLs
 REPO_LIST=(
     "http://poomsmart.github.io/repo/"
 )
 
-# Stelle sicher, dass das Verzeichnis existiert
+# Sicherstellen, dass das Verzeichnis existiert
 mkdir -p /private/etc/apt/sources.list.d
 
 for REPO_URL in "${REPO_LIST[@]}"; do
@@ -18,20 +18,20 @@ for REPO_URL in "${REPO_LIST[@]}"; do
 
     LIST_FILE="/private/etc/apt/sources.list.d/${REPO_NAME}.list"
 
-    # Erzeuge die Quellen-Datei mit Trusted-Flag
+    # Erzeuge die Quellen-Datei mit Architektur und Trusted-Flag
     printf "deb [arch=iphoneos-arm trusted=yes] %s ./\n" "$REPO_URL" \
         > "$LIST_FILE"
-
-    # Setze Rechte, damit Cydia/Apt sie liest
     chmod 644 "$LIST_FILE"
-
     echo "Added $REPO_URL → $LIST_FILE"
 done
 
 # Alte Paket-Cache-Dateien entfernen
 apt-get clean
 
-# Update mit HTTP-Debug-Ausgabe
-apt-get update -o Debug::Acquire::http=true
+# Update mit HTTP-Debug, Pipeline-Depth=0 und IPv4-Force
+apt-get update \
+    -o Debug::Acquire::http=true \
+    -o Acquire::http::Pipeline-Depth=0 \
+    -o Acquire::ForceIPv4=true
 
 exit 0
