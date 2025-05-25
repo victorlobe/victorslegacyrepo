@@ -1,9 +1,0 @@
-Origin: Victors Legacy Repo
-Label: Victors Legacy Repo
-Suite: stable
-Version: 1.0
-Codename: ios
-Architectures: iphoneos-arm
-Components: main
-Description: My attempt for archiving old Tweaks
-Icon: ./CydiaIcon.png

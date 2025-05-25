@@ -2,14 +2,29 @@ Package: com.victorlobe.musthavelegacyrepos
 Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: Victor Lobe <victor.lobe.dev@gmail.com>
-Filename: ./debs/Must Have Legacy Repos.deb
-Size: 2080
-MD5sum: bab4a44154dfcf52ffbd52dc08df0eff
-SHA1: d28de46a0fc6635dc411e2ccbde10084a7cca7a8
-SHA256: d6b271519c7bc95fa397107f5a6ba26297f9e8db51d0cd795ab2b222151863c2
+Filename: debs/Must Have Legacy Repos.deb
+Size: 1968
+MD5sum: c3c11b3c2d4c6665d4dbe00b49a0ac5f
+SHA1: d4efe0a15d3673d19804fd40c993f53d9cdc9956
+SHA256: c32e308ca00d245810d62bafc2c4791010f6e7ccf224ed0c776e693559beb7ab
 Section: Utilities
 Priority: optional
 Description: Automatically adds a list of important legacy repos to Cydia
 Author: Victor Lobe <victor.lobe.dev@gmail.com>
 Name: Must Have Legacy Repos
+
+Package: com.victorlobe.testtweak
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: Victor Lobe <victor.lobe.dev@gmail.com>
+Filename: debs/Test Tweak.deb
+Size: 1492
+MD5sum: f52a4b0c01681247ccc277017fe6163b
+SHA1: b84557c891737fc9a12c9fc8b24dd8d04d17cf10
+SHA256: 4a54d8d40937d5fb68fdd561cd278866d7a800139cfad1eba11d052785331a08
+Section: Utilities
+Priority: optional
+Description: Prints a test statement in the Cydia console
+Author: Victor Lobe <victor.lobe.dev@gmail.com>
+Name: Test Tweak
 
