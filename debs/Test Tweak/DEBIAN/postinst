@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+echo "==> [TestTweak] Installation complete: test"
+exit 0

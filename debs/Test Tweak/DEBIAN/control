@@ -1,0 +1,9 @@
+Package: com.victorlobe.testtweak
+Name: Test Tweak
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Prints a test statement in the Cydia console
+Maintainer: Victor Lobe <victor.lobe.dev@gmail.com>
+Author: Victor Lobe <victor.lobe.dev@gmail.com>
+Section: Utilities
+Priority: optional
