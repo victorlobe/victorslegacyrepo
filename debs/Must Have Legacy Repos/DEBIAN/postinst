@@ -2,7 +2,7 @@
 
 # List of repository URLs to add to Cydia
 REPO_LIST=(
-    "https://poomsmart.github.io/repo"
+    "http://poomsmart.github.io/repo"
 )
 
 # Loop to add each repository URL to Cydia
