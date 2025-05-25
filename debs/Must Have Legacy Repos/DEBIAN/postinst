@@ -1,23 +1,37 @@
 #!/bin/bash
+set -e
 
 # Liste der Repo-URLs
 REPO_LIST=(
     "http://poomsmart.github.io/repo/"
 )
 
+# Stelle sicher, dass das Verzeichnis existiert
+mkdir -p /private/etc/apt/sources.list.d
+
 for REPO_URL in "${REPO_LIST[@]}"; do
-    # Repo-Name aus URL erzeugen (nur alphanumerisch und Unterstriche)
+    # Nur alphanumerische Zeichen und Unterstriche im Dateinamen
     REPO_NAME=$(echo "$REPO_URL" \
         | sed 's#^https\?://##' \
         | sed 's#/$##' \
         | sed 's/[^a-zA-Z0-9]/_/g')
 
-    # Quelle mit Architektur für iOS 6 anlegen
-    echo "deb [arch=iphoneos-arm] $REPO_URL ./" \
-        > "/etc/apt/sources.list.d/${REPO_NAME}.list"
+    LIST_FILE="/private/etc/apt/sources.list.d/${REPO_NAME}.list"
+
+    # Erzeuge die Quellen-Datei mit Trusted-Flag
+    printf "deb [arch=iphoneos-arm trusted=yes] %s ./\n" "$REPO_URL" \
+        > "$LIST_FILE"
+
+    # Setze Rechte, damit Cydia/Apt sie liest
+    chmod 644 "$LIST_FILE"
+
+    echo "Added $REPO_URL → $LIST_FILE"
 done
 
-# Cydia-Quellen aktualisieren
-apt-get update
+# Alte Paket-Cache-Dateien entfernen
+apt-get clean
+
+# Update mit HTTP-Debug-Ausgabe
+apt-get update -o Debug::Acquire::http=true
 
 exit 0
